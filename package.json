@@ -1,0 +1,19 @@
+{
+  "name": "floatchat-ai",
+  "version": "1.0.0",
+  "description": "FloatChat AI - Ocean telemetry analyzer and Gemini AI chatbot",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install && npm run install-all",
+    "install-all": "npm --prefix backend install && npm --prefix frontend install",
+    "generate-data": "node scripts/generate-data.js",
+    "backend": "npm --prefix backend run start",
+    "frontend": "npm --prefix frontend run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "zip": "powershell -ExecutionPolicy Bypass -File scripts/zip-project.ps1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
